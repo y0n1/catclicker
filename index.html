@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CatClicker</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        ul {
+            list-style: none;
+            -webkit-padding-start: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        h2 {
+            display: flex;
+            justify-content: center;
+        }
+        figure {
+            display: inline-flex;
+            flex-direction: column;
+        }
+        figcaption {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin-top: 2%;
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <main id="app">
+        <ul id="cats-list"></ul>
+        <h2 id="current-cat-name-display"></h2>
+        <figure id="cat-figure">
+            <img id="cat-image" src="" alt="">
+            <figcaption><button id="btn-up-vote">+1</button><span id="clicks-counter"></span><button id="btn-down-vote">-1</button></figcaption>
+        </figure>
+    </main>
+    <script src="/app.js"></script>
+</body>
+
+</html>
