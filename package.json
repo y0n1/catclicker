@@ -1,0 +1,24 @@
+{
+  "name": "catclicker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "live-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/y0n1/catclicker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/y0n1/catclicker/issues"
+  },
+  "homepage": "https://github.com/y0n1/catclicker#readme",
+  "devDependencies": {
+    "live-server": "^1.2.0"
+  }
+}
