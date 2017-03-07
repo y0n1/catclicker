@@ -1,5 +1,6 @@
 let model = {
-  cats: [{
+  cats: [
+    {
       name: "Rocoso",
       clicksCount: 0,
       imageLink: '/images/rocoso-320x240.jpeg'
@@ -31,7 +32,7 @@ let view = {
   get catsList() {return document.getElementById('cats-list')},
   get catFigure() {return document.getElementById('cat-figure')},
   get catImage() {return document.getElementById('cat-image')},
-  getCatLineItemFragment: (cat) => {
+  getCatLineItemFragment(cat) {
     let template = `<li id="cat-${cat.name}"><a href="#">${cat.name}</a></li>`;
     let range = document.createRange();
     return range.createContextualFragment(template);
@@ -40,11 +41,13 @@ let view = {
 
 let octopus = {
   currentCat: null,
-  getRandomCat: () => {
+
+  get randomCat() {
     let randomInt = Math.floor(Math.random() * model.cats.length);
     return model.cats[randomInt];
   },
-  renderCatsList: () => {
+
+  renderCatsList() {
     let catsList = view.catsList;
     model.cats.forEach((cat) => {
       let catItem = view.getCatLineItemFragment(cat);
@@ -54,13 +57,15 @@ let octopus = {
       };
     });
   },
-  render: (cat) => {
+
+  render(cat) {
     octopus.currentCat = cat;
     view.currentCatNameDisplay.innerText = cat.name;
     view.catImage.setAttribute('src', cat.imageLink);
     view.clicksCounter.innerText = cat.clicksCount;
   },
-  init: () => {
+
+  init() {
     octopus.renderCatsList();
     view.upVoteButton.onclick = () => {
       view.clicksCounter.innerText = ++octopus.currentCat.clicksCount;
@@ -68,8 +73,8 @@ let octopus = {
     view.downVoteButton.onclick = () => {
       view.clicksCounter.innerText = --octopus.currentCat.clicksCount;
     };
-    octopus.render(octopus.getRandomCat());
-  }
+    octopus.render(octopus.randomCat);
+  },
 };
 
 window.onload = () => {
